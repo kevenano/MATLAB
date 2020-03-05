@@ -1,19 +1,19 @@
 function [alpha,b,beta,Yn] = neuralNet(X)
-%NEURALNET Éñ¾­ÍøÂç
-%   ÊäÈëXÐÐÏòÁ¿£¨µ¥¸öÑù±¾£©
-%   alpha: Òþ²ãÉñ¾­ÔªµÄÊäÈë
-%   b:  Òþ²ãÉñ¾­ÔªµÄÊä³ö
-%   beta: Êä³ö²ãÉñ¾­ÔªµÄÊäÈë
-%   Yn: Êä³ö²ãÉñ¾­ÔªµÄÊä³ö
+%NEURALNET ç¥žç»ç½‘ç»œ
+%   è¾“å…¥Xè¡Œå‘é‡ï¼ˆå•ä¸ªæ ·æœ¬ï¼‰
+%   alpha: éšå±‚ç¥žç»å…ƒçš„è¾“å…¥
+%   b:  éšå±‚ç¥žç»å…ƒçš„è¾“å‡º
+%   beta: è¾“å‡ºå±‚ç¥žç»å…ƒçš„è¾“å…¥
+%   Yn: è¾“å‡ºå±‚ç¥žç»å…ƒçš„è¾“å‡º
 
-global w            % Òþ²ãÉñ¾­ÔªÓëÊä³ö²ãÉñ¾­ÔªÖ®¼äµÄÁ¬½ÓÈ¨
-global v            % ÊäÈë²ãÉñ¾­ÔªÓëÒþ²ãÉñ¾­ÔªÖ®¼äµÄÁ¬½ÓÈ¨
-global theta        % Êä³ö²ãÉñ¾­ÔªãÐÖµ
-global gama         % Òþ²ãÉñ¾­ÔªãÐÖµ
+global w            % éšå±‚ç¥žç»å…ƒä¸Žè¾“å‡ºå±‚ç¥žç»å…ƒä¹‹é—´çš„è¿žæŽ¥æƒ
+global v            % è¾“å…¥å±‚ç¥žç»å…ƒä¸Žéšå±‚ç¥žç»å…ƒä¹‹é—´çš„è¿žæŽ¥æƒ
+global theta        % è¾“å‡ºå±‚ç¥žç»å…ƒé˜ˆå€¼
+global gama         % éšå±‚ç¥žç»å…ƒé˜ˆå€¼
 
-alpha = X*(v.');                % Òþ²ãÉñ¾­ÔªµÄÊäÈë
-b = logsig(alpha - gama);       % Òþ²ãÉñ¾­ÔªµÄÊä³ö
-beta = b*(w.');                 % Êä³ö²ãÉñ¾­ÔªµÄÊäÈë
-Yn = logsig(beta - theta);      % Êä³ö²ãÉñ¾­ÔªµÄÊä³ö
+alpha = X*(v.');                % éšå±‚ç¥žç»å…ƒçš„è¾“å…¥
+b = logsig(alpha - gama);       % éšå±‚ç¥žç»å…ƒçš„è¾“å‡º
+beta = b*(w.');                 % è¾“å‡ºå±‚ç¥žç»å…ƒçš„è¾“å…¥
+Yn = logsig(beta - theta);      % è¾“å‡ºå±‚ç¥žç»å…ƒçš„è¾“å‡º
 end
 

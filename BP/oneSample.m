@@ -1,9 +1,9 @@
 function Ek = oneSample(X,Y,yeta)
-%ONESAMPLE µ¥¸öÑù±¾´¦Àíº¯Êı
-%   yeta: Ñ§Ï°ÂÊ
+%ONESAMPLE å•ä¸ªæ ·æœ¬å¤„ç†å‡½æ•°
+%   yeta: å­¦ä¹ ç‡
 
 %%
-[~,b,~,Yn] = neuralNet(X);               % ½øÈëÉñ¾­ÍøÂçÔËËã
-Ek = argvUpdate(X, Y, Yn, b, yeta);    % ¸üĞÂ²ÎÊı, Í¬Ê±¼ÆËã¾ù·½Îó²î
+[~,b,~,Yn] = neuralNet(X);               % è¿›å…¥ç¥ç»ç½‘ç»œè¿ç®—
+Ek = argvUpdate(X, Y, Yn, b, yeta);    % æ›´æ–°å‚æ•°, åŒæ—¶è®¡ç®—å‡æ–¹è¯¯å·®
 end
 

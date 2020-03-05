@@ -1,22 +1,22 @@
 function Ek = argvUpdate(X, Y, Yn, b, yeta)
-%ARGVUPDATE ²ÎÊý¸üÐÂº¯Êý
-%   Y: Êµ¼ÊÖµ
-%   Yn: ¼ÆËãÖµ
-%   b: Òþ²ãÉñ¾­ÔªµÄÊä³ö
-%   yeta: Ñ§Ï°ÂÊ
-%   Ek: ¾ù·½Îó²î
+%ARGVUPDATE å‚æ•°æ›´æ–°å‡½æ•°
+%   Y: å®žé™…å€¼
+%   Yn: è®¡ç®—å€¼
+%   b: éšå±‚ç¥žç»å…ƒçš„è¾“å‡º
+%   yeta: å­¦ä¹ çŽ‡
+%   Ek: å‡æ–¹è¯¯å·®
 
-global w            % Òþ²ãÉñ¾­ÔªÓëÊä³ö²ãÉñ¾­ÔªÖ®¼äµÄÁ¬½ÓÈ¨
-global v            % ÊäÈë²ãÉñ¾­ÔªÓëÒþ²ãÉñ¾­ÔªÖ®¼äµÄÁ¬½ÓÈ¨
-global theta        % Êä³ö²ãÉñ¾­ÔªãÐÖµ
-global gama         % Òþ²ãÉñ¾­ÔªãÐÖµ
+global w            % éšå±‚ç¥žç»å…ƒä¸Žè¾“å‡ºå±‚ç¥žç»å…ƒä¹‹é—´çš„è¿žæŽ¥æƒ
+global v            % è¾“å…¥å±‚ç¥žç»å…ƒä¸Žéšå±‚ç¥žç»å…ƒä¹‹é—´çš„è¿žæŽ¥æƒ
+global theta        % è¾“å‡ºå±‚ç¥žç»å…ƒé˜ˆå€¼
+global gama         % éšå±‚ç¥žç»å…ƒé˜ˆå€¼
 
-global q            % Òþ²ãÉñ¾­ÔªµÄÊýÁ¿
-global d            % XµÄ³¤¶È£¨ÊäÈëÊôÐÔÊý£©
+global q            % éšå±‚ç¥žç»å…ƒçš„æ•°é‡
+global d            % Xçš„é•¿åº¦ï¼ˆè¾“å…¥å±žæ€§æ•°ï¼‰
 
-Ek = 0.5*(Yn-Y)*((Yn-Y).');                         % µÚk¸öÑù±¾µÄ¾ù·½Îó²î
-g = Yn.*(1-Yn).*(Y-Yn);                             % Êä³ö²ãÉñ¾­ÔªµÄÌÝ¶ÈÏî
-e = b.*(1-b).*(g*w);                                % Òþ²ãÉñ¾­ÔªµÄÌÝ¶ÈÏî
+Ek = 0.5*(Yn-Y)*((Yn-Y).');                         % ç¬¬kä¸ªæ ·æœ¬çš„å‡æ–¹è¯¯å·®
+g = Yn.*(1-Yn).*(Y-Yn);                             % è¾“å‡ºå±‚ç¥žç»å…ƒçš„æ¢¯åº¦é¡¹
+e = b.*(1-b).*(g*w);                                % éšå±‚ç¥žç»å…ƒçš„æ¢¯åº¦é¡¹
 delta_w = yeta*repmat(g.',1,q)*repmat(b.',1,q);     
 delta_v = yeta*repmat(e.',1,d)*repmat(X.',1,d);
 delta_theta = -1*yeta*g;
