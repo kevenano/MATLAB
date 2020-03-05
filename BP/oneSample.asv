@@ -1,0 +1,21 @@
+function Ek = oneSample(X,Y,Q,yeta)
+%ONESAMPLE 单个样本处理函数
+%   yeta: 学习率
+
+global w            % 隐层神经元与输出层神经元之间的连接权
+global v            % 输入层神经元与隐层神经元之间的连接权
+global theta        % 输出层神经元阈值
+global gama         % 隐层神经元阈值
+
+global l            % Y的长度（输出属性数）
+global q            % 隐层神经元的数量
+global d            % X的长度（输入属性数）
+
+l = length(Y);     
+q = Q; 
+d = length(X); 
+
+[~,b,~,Ys] = neuralNet(X);               % 进入神经网络运算
+Ek = argvUpdate(X, Y, Ys, b,k, yeta)     % 更新参数, 同时计算均方误差
+end
+
