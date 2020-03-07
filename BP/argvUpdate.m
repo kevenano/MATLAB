@@ -11,14 +11,15 @@ global v            % 输入层神经元与隐层神经元之间的连接权
 global theta        % 输出层神经元阈值
 global gama         % 隐层神经元阈值
 
+global l            % Y的长度（输出属性数）
 global q            % 隐层神经元的数量
 global d            % X的长度（输入属性数）
 
 Ek = 0.5*(Yn-Y)*((Yn-Y).');                         % 第k个样本的均方误差
 g = Yn.*(1-Yn).*(Y-Yn);                             % 输出层神经元的梯度项
 e = b.*(1-b).*(g*w);                                % 隐层神经元的梯度项
-delta_w = yeta*repmat(g.',1,q)*repmat(b.',1,q);     
-delta_v = yeta*repmat(e.',1,d)*repmat(X.',1,d);
+delta_w = yeta*repmat(g.',1,q).*repmat(b,l,1);     
+delta_v = yeta*repmat(e.',1,d).*repmat(X,q,1);
 delta_theta = -1*yeta*g;
 delta_gama = -1*yeta*e;
 
