@@ -12,7 +12,7 @@ function [Y_C,b] = neuroNet(X,v,w,theta,n)
 
 %%
 b = cell(1,n+1);                % 初始化各层输出
-beta = X*(v.');                     % 第1隐层的输入
+beta = X*(v.');                 % 第1隐层的输入
 b{1} = logsig(beta - theta{1}); % 第1隐层的输出
 for layer = 2:(n+1)
     beta = b{layer-1}*(w{layer-1}.');

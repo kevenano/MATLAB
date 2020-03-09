@@ -16,7 +16,7 @@ YS = mod(XS,2);     % 奇数
 l = [32 32 length(YS(1))];
 n = length(l)-1;
 yeta = 0.1;
-turns = 500000;
+turns = 5000;
 main(XS,YS,yeta,turns);
 %% 测试
 v_t = v;
